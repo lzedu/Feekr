@@ -1,0 +1,7 @@
+<!--pages/navindex/navindex.wxml-->
+<view class="container">
+  <my-swiper></my-swiper>
+  <my-nav></my-nav>
+  <my-home-hot title="{{title[0]}}"></my-home-hot>
+  <my-home-hot title="{{title[1]}}"></my-home-hot>
+</view>

@@ -1,0 +1,7 @@
+<view class="nav-swiper">
+  <swiper autoplay="true" style="height:{{imgHeight[current]}}rpx;" bindchange="bindchange">
+    <swiper-item wx:for="{{swiperlist}}" wx:key="a">
+      <image src="{{item.cover}}" mode="aspectFill" bindload="imageLoad"></image>
+    </swiper-item>
+  </swiper>
+</view>

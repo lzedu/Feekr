@@ -1,0 +1,4 @@
+/* pages/navindex/navindex.wxss */
+my-swiper{
+  width:100%;
+}

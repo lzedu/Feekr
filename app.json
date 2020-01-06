@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/navindex/navindex",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -9,6 +10,5 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
