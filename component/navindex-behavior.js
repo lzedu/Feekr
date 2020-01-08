@@ -3,11 +3,11 @@ let behavior = Behavior({
     title:String
   },
   data: {
-    list:{},
     swiperlist:[],
     stylelist:[],
     newProductlist:[],
-    specialsProductlist:[]
+    specialsProductlist:[],
+    themelist:[]
   },
   attached: function () { 
     var that = this
@@ -18,9 +18,10 @@ let behavior = Behavior({
           swiperlist:res.data.result.slider,
           stylelist:res.data.result.style,
           newProductlist: res.data.result.newProduct,
-          specialsProductlist: res.data.result.specialsProduct
+          specialsProductlist: res.data.result.specialsProduct,
+          themelist:res.data.result.theme
         })
-          console.log(res)
+          // console.log(res)
       }
     })
   },

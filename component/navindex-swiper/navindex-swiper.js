@@ -5,7 +5,7 @@ Component({
     title:String
   },
   data: {
-    imgHeight: [],
+    imgHeight: 0,
     current: 0
   }, // 私有数据，可用于模板渲染
 
@@ -35,10 +35,10 @@ Component({
         //宽高比  
         ratio = imgwidth / imgheight;
       //计算的高度值  
-      var viewHeight = 750 / ratio;
+      var viewHeight = wx.getSystemInfoSync().windowWidth*2 / ratio;
       var imgHeight = this.data.imgHeight;
       //把每一张图片的对应的高度记录到数组里  
-      imgHeight[this.data.current++] = viewHeight;
+      imgHeight = viewHeight;
       this.setData({
         imgHeight
       })
@@ -46,13 +46,6 @@ Component({
     bindchange: function (e) {
       this.setData({
         current: e.detail.current
-      })
-    },
-    // 内部方法建议以下划线开头
-    _myPrivateMethod: function () {
-      // 这里将 data.A[0].B 设为 'myPrivateData'
-      this.setData({
-        'A[0].B': 'myPrivateData'
       })
     },
     _propertyChange: function (newVal, oldVal) {

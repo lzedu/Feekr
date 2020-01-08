@@ -1,7 +1,9 @@
 // pages/navindex/navindex.js
 Page({
   data: {
-    title: ['新品&独家','本周特卖']
+    title: ['新品&独家','本周特卖'],
+    page:1,
+    likelist:[]
   },
 
   /**
@@ -49,5 +51,26 @@ Page({
    */
   onReachBottom: function () {
 
+  },
+  handleToLower(){
+    this.setData({
+      page:this.data.page+1
+    })
+    var that = this
+    wx.request({
+      url: `https://wapi.feekr.com/shop/home/guess_like?page=${that.data.page}&shopid=FK`,
+      success(res){
+        if(res.data.result.list){
+          that.setData({
+            likelist:that.data.likelist.concat(res.data.result.list)
+          })
+        }else{
+          wx.showToast({
+            title: '没有啦',
+            icon:'loading'
+          })
+        }
+      }
+    })
   },
 })

@@ -2,6 +2,11 @@
   "usingComponents": {
     "my-swiper":"/component/navindex-swiper/navindex-swiper",
     "my-nav":"/component/navindex-nav/navindex-nav",
-    "my-home-hot":"/component/navindex-home-hot/navindex-home-hot"
+    "my-home-hot":"/component/navindex-home-hot/navindex-home-hot",
+    "my-theme-header":"/component/navindex-header/navindex-header",
+    "my-theme-list":"/component/navindex-theme-entry-item/navindex-theme-entry-item",
+    "my-story-list":"/component/navindex-story-entry/navindex-story-entry",
+    "my-maybe-like":"/component/navindex-maybe-like/navindex-maybe-like",
+    "my-footer-box":"/component/navindex-footer-box/navindex-footer-box"
   }
 }
