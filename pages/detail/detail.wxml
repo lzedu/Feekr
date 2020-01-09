@@ -1,0 +1,7 @@
+<view class="detail">
+  <detail-swiper></detail-swiper>
+  <detail-header></detail-header>
+  <navigator url="/pages/detail-suite/detail-suite">
+    <detail-menu/>
+  </navigator>
+</view>

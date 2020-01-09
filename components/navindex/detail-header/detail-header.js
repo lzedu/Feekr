@@ -1,11 +1,12 @@
-import behavior from '../navindex-behavior.js'
+// component/detail-header/detail-header.js
+import behavior from '../behaviors/detail-behavior1.js'
 Component({
   /**
    * 组件的属性列表
    */
   behaviors:[behavior],
   properties: {
-    
+
   },
 
   /**

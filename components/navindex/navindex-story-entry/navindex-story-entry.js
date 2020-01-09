@@ -1,12 +1,12 @@
-// component/navindex-maybe-like/navindex-maybe-like.js
-import behavior from '../navindex-likelist-behavior.js'
+// component/navindex-story-entry/navindex-story-entry.js
+import behavior from '../behaviors/navindex-behavior2.js'
 Component({
+  behaviors:[behavior],
   /**
    * 组件的属性列表
    */
-  // behaviors:[behavior],
   properties: {
-    likelist:Object
+
   },
 
   /**

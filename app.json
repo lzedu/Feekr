@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/detail-suite/detail-suite",
+    "pages/detail/detail",
     "pages/navindex/navindex",
     "pages/index/index",
     "pages/logs/logs"

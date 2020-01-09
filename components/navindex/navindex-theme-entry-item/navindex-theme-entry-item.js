@@ -1,12 +1,11 @@
-// component/navindex-story-entry/navindex-story-entry.js
-import behavior from '../navindex-behavior2.js'
+import behavior from '../behaviors/navindex-behavior.js'
 Component({
-  behaviors:[behavior],
   /**
    * 组件的属性列表
    */
+  behaviors:[behavior],
   properties: {
-
+    
   },
 
   /**

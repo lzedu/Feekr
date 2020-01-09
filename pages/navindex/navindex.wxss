@@ -1,7 +1,5 @@
 /* pages/navindex/navindex.wxss */
-my-swiper{
-  width:100%;
-}
+
 .nav-common-base{
   box-sizing: border-box;
   margin-top: 20rpx;
