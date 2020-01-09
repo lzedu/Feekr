@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/home/home",
-    "pages/searchRes/searchRes",
-    "pages/detail-suite/detail-suite",
-    "pages/detail/detail",
     "pages/navindex/navindex",
+    "pages/detail-suite/detail-suite",
+    "pages/searchRes/searchRes",
+    "pages/home/home",
+    "pages/detail/detail",
     "pages/index/index",
     "pages/logs/logs"
   ],

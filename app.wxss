@@ -1,7 +1,5 @@
 /**app.wxss**/
-<<<<<<< HEAD
-@import './miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss';
-=======
+@import './weui-miniprogram/weui-wxss/dist/style/weui.wxss';
 page{
   height: 100%;
 }
@@ -11,7 +9,6 @@ my-swiper{
 detail-swiper{
   width: 100%;
 }
->>>>>>> qa
 .container {
   height: 100%;
   display: flex;
