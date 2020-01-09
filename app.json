@@ -1,6 +1,12 @@
 {
   "pages": [
+<<<<<<< HEAD
     "pages/home/home"
+=======
+    "pages/searchRes/searchRes",
+    "pages/index/index",
+    "pages/logs/logs"
+>>>>>>> cb51a7e7af2615bc155d5c9ae4bb4080e3e1bdea
   ],
   "window": {
     "backgroundTextStyle": "light",
