@@ -2,6 +2,9 @@
   "pages": [
     "pages/home/home",
     "pages/searchRes/searchRes",
+    "pages/detail-suite/detail-suite",
+    "pages/detail/detail",
+    "pages/navindex/navindex",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -9,8 +12,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "mp-loading": "./weui-miniprogram/loading/loading"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

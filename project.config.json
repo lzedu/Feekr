@@ -20,7 +20,12 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
+<<<<<<< HEAD
 		}
+=======
+		},
+		"nodeModules": true
+>>>>>>> qa
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.10.0",
