@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/productSearch/productSearch",
     "pages/searchRes/searchRes",
     "pages/index/index",
     "pages/logs/logs"

@@ -1,6 +1,11 @@
 <!--pages/searchRes/searchRes.wxml-->
 <view>
   <view class="fixed-box">
+    <search-bar 
+      hasSearched="true" 
+      keyword="{{keyword}}" 
+      bind:myevent="getKeyword"
+    ></search-bar>
     <search-result bind:myevent="getProData"></search-result>
   </view>
   <view wx:if="{{proList[0]}}" class="search-result-product">

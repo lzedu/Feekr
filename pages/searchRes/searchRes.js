@@ -13,7 +13,12 @@ Page({
     totalCount: 0,
     page: 1
   },
-
+  getKeyword:function(e){
+    this.setData({
+      keyword:e.detail.keyword
+    })
+    this.getData()
+  },
   getProData:function(e){
     this.setData({
       styleId: e.detail.styleId || this.data.styleId,
@@ -48,6 +53,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if(options.keyword){
+      this.setData({
+        keyword:options.keyword
+      })
+      console.log(this.data.keyword)
+    }
     this.getData()
   },
 
