@@ -1,11 +1,12 @@
-// component/detail-header/detail-header.js
-import behavior from '../behaviors/detail-behavior1.js'
+// components/detail/detail-like/detail-like.js
+import behavior from '../behaviors/detail-like-behavior.js'
 Component({
   /**
    * 组件的属性列表
    */
   behaviors:[behavior],
   properties: {
+
   },
 
   /**

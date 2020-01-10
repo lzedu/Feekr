@@ -6,7 +6,7 @@ Component({
    */
   behaviors:[behavior],
   properties: {
-
+    productThumblist:Object
   },
 
   /**

@@ -21,6 +21,6 @@
         <my-maybe-like likelist="{{likelist}}"/>
       </view>
     </view>
-    <my-footer-box/>
+    <!-- <my-footer-box/> -->
   </view>
 </scroll-view>

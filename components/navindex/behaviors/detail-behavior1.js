@@ -3,17 +3,20 @@ let behavior = Behavior({
     title: String
   },
   data: {
-    productThumblist: [],
+    productThumblist: [], 
     productThumblistlen:0,
     detailheader:{},
-    group:[]
+    group:[],
+    userinfo:{}
   },
   attached: function () {
+    let id = wx.getStorageSync("id")
+    // let id = '25954'
     var that = this
     wx.request({
-      url: 'https://wapi.feekr.com/shop/product/detail?productId=25954&pvFrom=wap_index_new&shopid=FK',
+      url: `https://wapi.feekr.com/shop/product/detail?productId=${id}&pvFrom=wap_index_new&shopid=FK`,
       success(res) {
-        let { productDesc, productName, productPrice, productUnit, productUnitCount, productThumb,group } = res.data.result
+        let { productDesc, productName, productPrice, productUnit, productUnitCount, productThumb, group, user, head, recom} = res.data.result
         that.setData({
           productThumblist:productThumb,
           productThumblistlen:productThumb.length,
@@ -24,11 +27,19 @@ let behavior = Behavior({
             productUnit,
             productUnitCount,
           },
-          group
+          group,
+          userinfo:{
+            head,
+            user,
+            recom
+          }
         })
         console.log(res)
       }
     })
+  },
+  test(){
+    console.log(2)
   }
 })
 

@@ -4,7 +4,7 @@
       <view class="item ctrl" wx:for="{{title}}" wx:key="{{item}}">
         <view class="{{index+1==currentM?'acticve':''}}" bindtap="chooseMonth" data-id="{{index}}">{{item}}</view>
       </view>
-    </view>
+    </view> 
  
 <!-- item ctrl -->
 

@@ -2,7 +2,7 @@ Component({
     //初始默认为当前日期
     properties: {
         defaultValue: {
-            type: String,
+            type: String, 
             value: ''
         },
         //星期数组
@@ -10,10 +10,7 @@ Component({
             type: Array,
             value: ['日', '一', '二', '三', '四', '五', '六']
         }
-        
     },
-
-
     // 组件的初始数据
     data: {
         index:0,

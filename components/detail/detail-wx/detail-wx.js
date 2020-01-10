@@ -1,11 +1,10 @@
-// component/detail-header/detail-header.js
-import behavior from '../behaviors/detail-behavior1.js'
+// components/detail/detail-wx/detail-wx.js
 Component({
   /**
    * 组件的属性列表
    */
-  behaviors:[behavior],
   properties: {
+
   },
 
   /**

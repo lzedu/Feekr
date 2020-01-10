@@ -2,6 +2,10 @@
   <detail-swiper></detail-swiper>
   <detail-header></detail-header>
   <navigator url="/pages/detail-suite/detail-suite">
-    <detail-menu/>
+    <detail-menu group="group"/>
   </navigator>
+  <detail-pro-guide/>
+  <detail-pro-desc/>
+  <detail-wx/>
+  <detail-like/>
 </view>
