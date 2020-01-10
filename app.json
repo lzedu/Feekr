@@ -1,6 +1,13 @@
 {
   "pages": [
+    "pages/detail-suite/detail-suite",
+    "pages/navindex/navindex",
+    "pages/productSearch/productSearch",
+    "pages/searchRes/searchRes",
     "pages/home/home",
+    "pages/detail/detail",
+    "pages/index/index",
+    "pages/logs/logs",
     "pages/home/morenew/morenew",
     "pages/home/newdetail/newdetail"
   ],
@@ -8,8 +15,8 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "mp-loading": "./weui-miniprogram/loading/loading"
   },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
