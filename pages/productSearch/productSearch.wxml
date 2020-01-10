@@ -1,0 +1,2 @@
+<!--pages/productSearch/productSearch.wxml-->
+<search-bar hasSearched='false'></search-bar>

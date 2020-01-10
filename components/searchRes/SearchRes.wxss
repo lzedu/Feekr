@@ -21,7 +21,7 @@
   border-bottom: 1rpx solid #e6e6e6;
 }
 .search-select-items {
-  margin-top: -16rpx;
+  margin-top: 0rpx;
   padding: 0;
   border: none;
   outline: none;

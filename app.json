@@ -2,6 +2,7 @@
   "pages": [
     "pages/detail-suite/detail-suite",
     "pages/navindex/navindex",
+    "pages/productSearch/productSearch",
     "pages/searchRes/searchRes",
     "pages/home/home",
     "pages/detail/detail",
