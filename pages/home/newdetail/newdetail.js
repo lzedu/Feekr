@@ -1,34 +1,50 @@
-// pages/home/home.js
+// pages/home/newdetail/newdetail.js
+var WxParse = require('../../assets/wxParse/wxParse.js')
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    titles:'',
-    subTitle:'',
-    more:''
+    id:'',
+    content:''
   },
-  morenewTap:function(e){
-    wx.navigateTo({
-      url: './morenew/morenew'
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    this.setData({
+      id:options.id+'=='
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    var that = this
+    wx.request({
+      url: `https://wapi.feekr.com/article/detail?id=${this.data.id}`,
+      // url:`https://wapi.feekr.com/share?id=${this.data.id}&type=article`,
+      success: (res) => {
+        var detail = res.data.result.content.content
+        WxParse.wxParse('detail', 'html', detail, that, 5);
 
+        // this.setData({
+        //   content: 
+
+        // })
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
