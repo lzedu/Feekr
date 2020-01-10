@@ -2,10 +2,10 @@
     <!--显示当前年月日-->
     <view class='calendar-title'>
       <view class="item ctrl" wx:for="{{title}}" wx:key="{{item}}">
-        <view class="{{index+1==currentM?'acticve':''}}" bindtap="lastMonth" data-id="{{index}}">{{item}}</view>
+        <view class="{{index+1==currentM?'acticve':''}}" bindtap="chooseMonth" data-id="{{index}}">{{item}}</view>
       </view>
     </view>
-
+ 
 <!-- item ctrl -->
 
     <!-- ============滚动展示============  -->
@@ -30,8 +30,7 @@
 
         <!--当月格子-->
         <view class='grid' wx:for='{{thisMonthDays}}' wx:key='{{indx}}'>
-            <view class='self' wx:if="{{ format === year+'-'+item.monthFormat+'-'+item.dateFormat }}"></view>
-            <view class="wrap {{ select === year+'-'+item.monthFormat+'-'+item.dateFormat ? 'select' :''}}" bindtap='select' data-date='{{item.date}}'>{{item.date}}</view>
+            <view class="wrap {{ select === year+'-'+item.monthFormat+'-'+item.dateFormat ? 'select' :''}}" bindtap='select' data-date='{{item.date}}'>{{item.date}}<view class="price">{{item.content}}</view></view>
         </view>
 
         <!--下个月占位格子-->

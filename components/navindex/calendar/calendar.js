@@ -9,20 +9,15 @@ Component({
         weekText: {
             type: Array,
             value: ['日', '一', '二', '三', '四', '五', '六']
-        },
-        lastMonth: {
-            type: String,
-            value: '◀'
-        },
-        nextMonth: {
-            type: String,
-            value: '▶'
         }
+        
     },
 
 
     // 组件的初始数据
     data: {
+        index:0,
+        content:'',
         //当月格子
         thisMonthDays: [],
         //上月格子
@@ -44,10 +39,10 @@ Component({
         YEAR: 0,
         MONTH: 0,
         DATE: 0,
-        calendarlist:{}
+        calendarlist:[]
     },
     ready: function () {
-        this.today();
+        // this.today();
     },
     lifetimes:{
       attached() {
@@ -55,7 +50,7 @@ Component({
         wx.request({
           url: 'https://wapi.feekr.com/shop/order/booking_calendar?groupId=QlpoNDFBWSZTWbI6NC8AAAJLgCAAVmAAAIooBAAgADEA0AETTDSPI7MhE0AVhS0XckU4UJCyOjQv&shopid=FK',
           success(res) {
-            console.log(res.data.result)
+            // console.log(res.data.result)
             let { currentTime,endTime } = res.data.result
             let reg = /\/(\w+)\//
             let now = reg.exec(currentTime)
@@ -66,13 +61,14 @@ Component({
             for(let i=~~now[1];i<=~~end[1];i++){
               tmpArr[len++] = that.data.year + '年' + that.zero(i) + '月'
             }
-            console.log(tmpArr)
+            // console.log(tmpArr)
             // let tmp = year + '年' + this.zero(now++) + '月'
             that.setData({
               currentM:~~now[1],
               calendarlist:res.data.result.validTime,
-              title:tmpArr
+              title:tmpArr,
             })
+            that.today();
           }
         })
       }
@@ -122,6 +118,7 @@ Component({
                 month,
                 date,
             })
+            // console.log(month)
             this.createDays(year, month);
             this.createEmptyGrids(year, month);
 
@@ -172,24 +169,17 @@ Component({
             this.scrollCalendar(this.data.year, this.data.month,date);
         },
         //上个月
-        lastMonth: function (e) {
+        chooseMonth: function (e) {
             let index = e.currentTarget.dataset.id
             let date = this.data.title[index]
             let dateArr = date.match(/(\d+)/g)
             let year = dateArr[0]
-            let month = dateArr[1]
+            let month = ~~dateArr[1]
             this.setData({
               currentM:index+1
             })
             // let month = this.data.month == 1 ? 12 : this.data.month - 1;
             // let year = this.data.month == 1 ? this.data.year - 1 : this.data.year;
-            //初始化日历组件UI
-            this.display(year, month, 0);
-        },
-        //下个月
-        nextMonth: function () {
-            let month = this.data.month == 12 ? 1 : this.data.month + 1;
-            let year = this.data.month == 12 ? this.data.year + 1 : this.data.year;
             //初始化日历组件UI
             this.display(year, month, 0);
         },
@@ -199,14 +189,25 @@ Component({
         },
         // 绘制当月天数占的格子
         createDays: function (year, month) {
-            let thisMonthDays = [],
-                days = this.getThisMonthDays(year, month);
+            // console.log(this.data.calendarlist)
+            let thisMonthDays = [],days = this.getThisMonthDays(year, month);
+            let idx = this.data.index
             for (let i = 1; i <= days; i++) {
+              console.log(year + '/' + this.zero(month) + '/' + this.zero(i))
+              if (year + '/' + this.zero(month) + '/' + this.zero(i) >= this.data.calendarlist[0].date){
+              idx = this.getContent(idx, year, month, i) 
+              console.log(idx)
+              this.setData({
+                index:idx
+              })
+              }
+              // console.log(year + '/' + this.zero(month) + '/' + this.zero(i))
                 thisMonthDays.push({
                     date: i,
                     dateFormat: this.zero(i),
                     monthFormat: this.zero(month),
-                    week: this.data.weekText[new Date(Date.UTC(year, month - 1, i)).getDay()]
+                    week: this.data.weekText[new Date(Date.UTC(year, month - 1, i)).getDay()],
+                  content: (idx && this.data.calendarlist[idx]['price']) ? ('￥' + this.data.calendarlist[idx]['price']):''
                 });
             }
             this.setData({
@@ -242,10 +243,20 @@ Component({
                 empytGridsBefore
             })
         },
-
+        //得到当前日期的价格
+      getContent: function (count, year, month, day) {
+        for (let i = count; i < this.data.calendarlist.length; i++) {
+          // console.log(this.data.calendarlist[i].date)
+          // console.log(year + '/' + this.zero(month) + '/' + this.zero(day))
+          if (this.data.calendarlist[i].date === year + '/' + this.zero(month) + '/' + this.zero(day)) {
+            return i
+          }
+        }
+      },
         //补全0
         zero: function (i) {
             return i >= 10 ? i : '0' + i;
-        },
+        }
+        
     }
 })
