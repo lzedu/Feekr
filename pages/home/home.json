@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "swipers":"../../components/homeComponents/swiper/swiper",
     "list-title": "../../components/homeComponents/ListTitle/ListTitle",
     "list-more": "../../components/homeComponents/ListMore/ListMore",
     "product-list": "../../components/homeComponents/productlist/productlist",

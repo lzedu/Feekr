@@ -1,0 +1,9 @@
+<!--pages/home/newdetail/newdetail.wxml-->
+<!-- <text>{{content}}</text> -->
+
+<!-- <rich-text node="<p>你好</p>"></rich-text> -->
+        <import src="../../assets/wxParse/wxParse.wxml"/>
+        <!-- <block wx-for="{{wxParseData:detail}}" wx:for-item="item" wx:key="id"  >
+          <custom-parse item="{{item.nodes}}" notes="{{notes}}"></custom-parse>
+        </block> -->
+       <template is="wxParse" data="{{wxParseData:detail.nodes}}"/>
