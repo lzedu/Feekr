@@ -1,5 +1,6 @@
 // pages/detail/detail.js
 import behavior from '../../components/navindex/behaviors/detail-behavior1.js'
+var app = getApp()
 Page({
 
   /**
@@ -7,10 +8,6 @@ Page({
    */
   behaviors:[behavior],
   data: {
-    productThumblist: [],
-    productThumblistlen: 0,
-    detailheader: {},
-    group: []
   },
 
   /**
@@ -19,9 +16,9 @@ Page({
   onLoad: function (options) {
     // console.log(options.id)
     let id = options.id
-    wx.setStorageSync("id",id)
-    // console.log(wx.getStorageSync("id"))
-  
+    // wx.setStorageSync("id",id)
+    app.globalData.detailId = id
+    console.log(app.globalData.detailId)
   },
 
   /**

@@ -190,10 +190,10 @@ Component({
             let thisMonthDays = [],days = this.getThisMonthDays(year, month);
             let idx = this.data.index
             for (let i = 1; i <= days; i++) {
-              console.log(year + '/' + this.zero(month) + '/' + this.zero(i))
+              // console.log(year + '/' + this.zero(month) + '/' + this.zero(i))
               if (year + '/' + this.zero(month) + '/' + this.zero(i) >= this.data.calendarlist[0].date){
               idx = this.getContent(idx, year, month, i) 
-              console.log(idx)
+              // console.log(idx)
               this.setData({
                 index:idx
               })

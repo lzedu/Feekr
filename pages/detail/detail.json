@@ -6,6 +6,7 @@
     "detail-pro-guide":"/components/detail/detail-product-guide/detail-product-guide",
     "detail-pro-desc":"/components/detail/detail-product-desc/detail-product-desc",
     "detail-wx":"/components/detail/detail-wx/detail-wx",
-    "detail-like":"/components/detail/detail-like/detail-like"
+    "detail-like":"/components/detail/detail-like/detail-like",
+    "detail-footer":"/components/detail/detail-footer/detail-footer"
   }
 }

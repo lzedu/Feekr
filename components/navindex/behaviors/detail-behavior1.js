@@ -1,3 +1,4 @@
+var app = getApp()
 let behavior = Behavior({
   properties: {
     title: String
@@ -9,9 +10,9 @@ let behavior = Behavior({
     group:[],
     userinfo:{}
   },
-  attached: function () {
-    let id = wx.getStorageSync("id")
-    // let id = '25954'
+  ready: function () {
+    let id = app.globalData.detailId
+
     var that = this
     wx.request({
       url: `https://wapi.feekr.com/shop/product/detail?productId=${id}&pvFrom=wap_index_new&shopid=FK`,

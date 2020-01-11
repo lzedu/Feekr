@@ -2,7 +2,7 @@
   <view class="recommend">
     <view class="product-detail-guess-title">猜你喜欢</view>
     <view class="recommend-goods">
-      <view class="recommend-goods-item" wx:for="{{likelist}}">
+      <view class="recommend-goods-item" wx:for="{{likelist}}" wx:key="id">
         <navigator url="/pages/detail/detail?id={{item.productId}}" class="common-goods recommend-item">
           <image src="{{item.productCover+'!400X250'}}" class="common-goods-img lazyloaded" mode="widthFix"/>
           <view class="common-goods-content one-line-ellipsis">{{item.productName}}</view>
