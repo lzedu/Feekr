@@ -10,12 +10,14 @@ let behavior = Behavior({
     detailheader: {},
     group: [],
     userinfo:{},
-    prodesc:{}
+    prodesc:{},
+    group2:[],
+    sum:0
   },
   ready: function () {
-    // let id = wx.getStorageSync("id")
-    let id =app.globalData.detailId
-    console.log(app.globalData.detailId)
+    let id = wx.getStorageSync("id")
+    // let id =app.globalData.detailId
+    // console.log(app.globalData.detailId)
     var that = this
     wx.request({
       url: `https://wapi.feekr.com/shop/product/detail?productId=${id}&pvFrom=wap_index_new&shopid=FK`,
@@ -33,6 +35,7 @@ let behavior = Behavior({
             productUnitCount,
           },
           group,
+          group2:group.slice(1),
           userinfo: {
             head,
             user,
@@ -43,7 +46,8 @@ let behavior = Behavior({
             productDetail: WxParse.wxParse('productDetail', 'html', productDetail, that),
             usage,
             rule
-          }
+          },
+          sum:group[0].groupPrice
         })
         // console.log(that.data.prodesc.productDetail)
       }

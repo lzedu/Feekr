@@ -11,8 +11,8 @@ let behavior = Behavior({
     userinfo:{}
   },
   ready: function () {
-    let id = app.globalData.detailId
-
+    // let id = app.globalData.detailId
+    let id = wx.getStorageSync("id")
     var that = this
     wx.request({
       url: `https://wapi.feekr.com/shop/product/detail?productId=${id}&pvFrom=wap_index_new&shopid=FK`,
@@ -35,7 +35,7 @@ let behavior = Behavior({
             recom
           }
         })
-        console.log(res)
+        // console.log(res)
       }
     })
   },
