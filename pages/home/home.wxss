@@ -103,7 +103,7 @@
 .list-city{
   background: #fff;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   padding-top:10px; 
 }
 
@@ -116,4 +116,7 @@
   width: 100%;
   height: 100%;
   /* margin: 0 auto; */
+}
+.recommend{
+  border-top: 1px solid #2d2d2d;
 }

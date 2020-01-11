@@ -1,32 +1,35 @@
-// pages/home/home.js
+// pages/home/columnnew/columnnew.js
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    titles:'',
-    subTitle:'',
-    more:''
-  },
-  morenewTap:function(e){
-    wx.navigateTo({
-      url: './morenew/morenew'
-    })
-  },
-  morecolumntap:function(e){
-    wx.navigateTo({
-      url: './morecolumn/morecolumn',
-    })
+    id:'',
+    news:'',
+    hot:''
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      id:options.id
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    wx.request({
+      url: `https://wapi.feekr.com/selection/detail?columnId=${this.data.id}&order=new&page=1`,
+      success:(res)=>{
+        this.setData({
+          news:res.data.result
+        })
+      }
+    })
   },
 
   /**

@@ -8,6 +8,9 @@
   /* text-align: left; */
   box-sizing: border-box;
 }
+.selected-container:nth-child(6){
+  border-bottom:1px solid #F2F2F2; 
+}
 .selected-container > view:nth-child(2){
   border-bottom:1px solid #F2F2F2; 
 }
@@ -46,9 +49,9 @@
   text-align: left;
   line-height: 1.5;
   position: absolute;
-  /* top: -50px; */
+  top: -10px;
   left: 0;
-  color: #999;
+  color: #2d2d2d;
   margin-bottom: 30px;
 }
 .selected .product-tag {
@@ -63,7 +66,7 @@
   flex-direction:row;
   flex-wrap:wrap;
   position: absolute;
-  top: 20px;
+  top: 42px;
   left: 0;
   /* margin-top: 10px; */
 }

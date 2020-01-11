@@ -1,0 +1,22 @@
+<view class="columnnew">
+  <view class="column-head">
+    <view class="head-top">
+      <image src="https://editor-cover.feekr.com/2016/06/23/1031367e2ebe13db7911e6a65d6eeed30f422d.jpg!600X360"></image>
+    </view>
+    <view class="head-bottom">
+      <view class="head-author">
+        <view class="author-img">
+          <image src="https://photo02.feekr.com/2016/06/23/103130c216fc8ddb3080d51cd8bcee33faa4c0.jpg!180X180" mode="aspectFit"></image>
+        </view>
+      </view>
+      <view class="author-name">最美中国</view>
+      <view class="btn">订阅</view>
+    </view>
+    <view class="column-tab">
+      <view class="tab active">最新</view>
+      <view>|</view>
+      <view class="tab">热门</view>
+    </view>
+  </view>
+  <column-list></column-list>
+</view>

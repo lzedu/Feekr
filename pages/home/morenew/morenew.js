@@ -25,6 +25,11 @@ Page({
     wx.request({
       url: `https://wapi.feekr.com/news/lists?id=&count=10&page=${this.data.page}`,
       success: (res) => {
+        console.log(this.data.page)
+        if(this.data.page==2){
+          console.log(this.data.page)
+          var list = res.data.result.list.splice(1, 1)
+        }
         this.setData({
           morenewlist: [
             ...this.data.morenewlist,

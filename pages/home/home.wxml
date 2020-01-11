@@ -48,7 +48,7 @@
     <view class="list-selected">
       <list-title title="编辑精选" subtitle="推荐最具小众特色的旅行体验"></list-title>
       <selected-list></selected-list>
-      <list-more more="更多栏目推荐"></list-more>
+      <list-more more="更多栏目推荐" class="recommend" bindtap="morecolumntap" ></list-more>
     </view>
   </view>
 </view>

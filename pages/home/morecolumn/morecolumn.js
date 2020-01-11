@@ -1,18 +1,17 @@
-// pages/home/home.js
+// pages/home/morecolumn/morecolumn.js
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    titles:'',
-    subTitle:'',
-    more:''
+    columnlist:[]
   },
-  morenewTap:function(e){
+  columnnewTap: function (e) {
+    console.log(e)
+    var id = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: './morenew/morenew'
-    })
-  },
-  morecolumntap:function(e){
-    wx.navigateTo({
-      url: './morecolumn/morecolumn',
+      url: `../columnnew/columnnew?id=${id}`,
     })
   },
   /**
@@ -26,7 +25,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    wx.request({
+      url: 'https://wapi.feekr.com/editor/column',
+      success:(res)=>{
+        this.setData({
+          columnlist:res.data.result.list
+        })
+      }
+    })
   },
 
   /**

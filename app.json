@@ -1,14 +1,16 @@
 {
   "pages": [
-    "pages/detail-suite/detail-suite",
+    "pages/home/columnnew/columnnew",
+    "pages/home/morecolumn/morecolumn",
+    "pages/home/home",
+    "pages/home/morenew/morenew",
     "pages/navindex/navindex",
+    "pages/detail-suite/detail-suite",
     "pages/productSearch/productSearch",
     "pages/searchRes/searchRes",
-    "pages/home/home",
     "pages/detail/detail",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/home/morenew/morenew",
     "pages/home/newdetail/newdetail"
   ],
   "window": {

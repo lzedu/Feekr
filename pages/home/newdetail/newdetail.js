@@ -7,7 +7,7 @@ Page({
    */
   data: {
     id:'',
-    content:''
+    detailOthers:''
   },
 
   /**
@@ -30,12 +30,10 @@ Page({
       // url:`https://wapi.feekr.com/share?id=${this.data.id}&type=article`,
       success: (res) => {
         var detail = res.data.result.content.content
+        this.setData({
+          detailOthers:res.data.result.content
+        })
         WxParse.wxParse('detail', 'html', detail, that, 5);
-
-        // this.setData({
-        //   content: 
-
-        // })
       }
     })
   },

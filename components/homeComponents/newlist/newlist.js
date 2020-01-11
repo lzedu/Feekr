@@ -23,9 +23,11 @@ Component({
   lifetimes:{
     attached:function(){
       wx.request({
-        url:'https://wapi.feekr.com/news/lists?page=1&count=3',
+        url:'https://wapi.feekr.com/news/lists?page=1&count=4',
+        
         success:(res)=>{
           // console.log(res.data)
+          var list = res.data.result.list.splice(1, 1)
           this.setData({
             newlist:res.data.result.list
           })
