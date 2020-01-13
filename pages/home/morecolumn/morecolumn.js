@@ -8,8 +8,12 @@ Page({
     columnlist:[]
   },
   columnnewTap: function (e) {
-    console.log(e)
+    // console.log(e)
     var id = e.currentTarget.dataset.id
+    wx.setStorage({
+      key: 'columnid',
+      data: id,
+    })
     wx.navigateTo({
       url: `../columnnew/columnnew?id=${id}`,
     })

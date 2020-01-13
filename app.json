@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/home/columnnew/columnnew",
-    "pages/home/morecolumn/morecolumn",
     "pages/home/home",
+    "pages/home/morecolumn/morecolumn",
+    "pages/home/columnnew/columnnew",
     "pages/home/morenew/morenew",
     "pages/navindex/navindex",
     "pages/detail-suite/detail-suite",

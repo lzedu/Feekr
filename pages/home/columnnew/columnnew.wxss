@@ -1,7 +1,3 @@
-.columnnew{
-  width: 100%;
-  height: 100%;
-}
 .column-head{
   background: #fff;
   border-bottom: 1px solid #e8e8e8;

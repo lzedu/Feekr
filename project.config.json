@@ -20,17 +20,12 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-<<<<<<< HEAD
 		}
-=======
-		},
-		"nodeModules": true
->>>>>>> qa
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.10.0",
 	"appid": "wx6eaedd43ac87ea76",
-	"projectname": "Feekr",
+	"projectname": "feekr",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

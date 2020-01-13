@@ -3,6 +3,8 @@
   wx:for="{{newlist}}"
   wx:for-item="item"
   wx:key="id"
+  bindtap="toDetail"
+  data-id="{{item.id}}"
 >
   <image alt='图片' src="{{item.cover+'!300X300'}}" />
   <view class="new_right">

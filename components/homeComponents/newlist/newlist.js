@@ -18,7 +18,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    toDetail(e){
+      let id = e.currentTarget.dataset.id
+      console.log(id)
+      wx.navigateTo({
+        url: `/pages/home/newdetail/newdetail?id=${id}`
+      })
+    }
   },
   lifetimes:{
     attached:function(){

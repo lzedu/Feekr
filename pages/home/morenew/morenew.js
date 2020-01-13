@@ -25,7 +25,7 @@ Page({
     wx.request({
       url: `https://wapi.feekr.com/news/lists?id=&count=10&page=${this.data.page}`,
       success: (res) => {
-        console.log(this.data.page)
+        // console.log(this.data.page)
         if(this.data.page==2){
           console.log(this.data.page)
           var list = res.data.result.list.splice(1, 1)
@@ -44,7 +44,7 @@ Page({
   //图片加载出错，则地址设为默认地址，需要在image标签设置 属性，记录index 
   imgError:function(e){
     var errorIndex = parseInt(e.target.dataset.imgindex)
-    console.log(errorIndex)
+    // console.log(errorIndex)
     var imglist = this.data.morenewlist
     imglist[errorIndex].cover = this.data.defaultImg
     this.setData({
@@ -52,7 +52,7 @@ Page({
     })
   },
   handleTap:function(e){
-    console.log(e.currentTarget.dataset.itemid)
+    // console.log(e.currentTarget.dataset.itemid)
     var id = e.currentTarget.dataset.itemid
     wx.navigateTo({
       url: `../newdetail/newdetail?id=${id}`,

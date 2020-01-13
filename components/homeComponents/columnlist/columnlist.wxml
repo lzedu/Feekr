@@ -1,6 +1,17 @@
+<scroll-view>
 <view class="columnlist">
-  <view class="column-item">
-    <image src="https://newscover.feekr.com/2019/04/30/1723330ee2b94d38ed74f51583d8a258f32196.jpg!600X400" mode="aspectFill"></image>
-    <view class="title">《向往的生活》回归！这片超好吃的秘境又要火了</view>
+  <view 
+    class="column-item"
+    wx:for="{{newList}}"
+    wx:for-item="item"
+    wx:key="id"
+    bindtap="toDetail"
+    data-ids="{{item.id}}"
+  >
+    <image src="{{item.cover+'!600X400'}}" mode="aspectFill"></image>
+    <view class="title">{{item.title}}</view>
   </view>
+
+  
 </view>
+  </scroll-view>
