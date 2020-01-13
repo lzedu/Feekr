@@ -1,5 +1,5 @@
 <!--pages/navindex/navindex.wxml-->
-<scroll-view class="scroll-wrap" scroll-y="true" bindscrolltolower="handleToLower" bindscroll="scroll"  lower-threshold="50">
+<scroll-view class="scroll-wrap" scroll-y="true" bindscrolltolower="handleToLower"  lower-threshold="50">
   <view class="container">
     <my-swiper></my-swiper>
     <my-nav></my-nav>
@@ -21,6 +21,6 @@
         <my-maybe-like likelist="{{likelist}}"/>
       </view>
     </view>
-    <my-footer-box/>
+    <!-- <my-footer-box/> -->
   </view>
 </scroll-view>

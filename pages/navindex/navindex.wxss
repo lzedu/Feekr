@@ -1,5 +1,7 @@
 /* pages/navindex/navindex.wxss */
-
+view{
+  overflow:visible;
+}
 .nav-common-base{
   box-sizing: border-box;
   margin-top: 20rpx;

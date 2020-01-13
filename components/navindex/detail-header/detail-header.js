@@ -6,7 +6,6 @@ Component({
    */
   behaviors:[behavior],
   properties: {
-
   },
 
   /**

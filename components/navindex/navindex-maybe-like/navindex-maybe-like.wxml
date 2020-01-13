@@ -1,5 +1,5 @@
 <view class="like-item" wx:if="{{likelist.length}}">
-  <navigator wx:for="{{likelist}}" wx:key="{{item.id}}" url="/detail/{{item.id}}" class="common-goods maybe-like-item">
+  <navigator wx:for="{{likelist}}" wx:key="id" url="/pages/detail/detail?id={{item.id}}" class="common-goods maybe-like-item">
     <image src="{{item.cover}}" mode="widthFill" class="common-goods-img lazyloaded"/>
     <view class="common-goods-content one-line-ellipsis">{{item.productName}}</view>
     <view class="common-goods-price">

@@ -5,8 +5,8 @@
     <navigator url="" class="common-search-entry-header-more" style="color: rgb(26, 188, 156);">更多</navigator>
   </view>
   <view class="common-search-entry-nav">
-    <view wx:for="{{title==='新品&独家'?newProductlist:specialsProductlist}}" wx:key="{{item.id}}" class="common-goods common-search-entry-item">
-      <navigator url="/detail/{{item.id}}"  >
+    <view wx:for="{{title==='新品&独家'?newProductlist:specialsProductlist}}" wx:key="id" class="common-goods common-search-entry-item">
+      <navigator url="/pages/detail/detail?id={{item.id}}"  >
         <image src="{{item.cover}}" class="common-goods-img lazyloaded" mode="widthFill"/>
         <view class="common-goods-content one-line-ellipsis">{{item.productName}}</view>
         <view class="common-goods-price" style="color: rgb(26, 188, 156);">
