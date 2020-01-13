@@ -1,29 +1,18 @@
-// pages/productSearch/productSearch.js
+// pages/newsSeachRes/newsSearchRes.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    searchHistory:[],
-    hotSearchList:[],
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.request({
-      url: 'https://wapi.feekr.com/shop/product/keyword?shopid=FK',
-      success: result=>{
-        this.setData({
-          hotSearchList:result.data.result.list
-        })
-      }
-    })
-    this.setData({
-      searchHistory: wx.getStorageSync('search-history-labels')
-    })
+
   },
 
   /**
@@ -37,9 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      searchHistory: wx.getStorageSync('search-history-labels'),
-    })
+
   },
 
   /**

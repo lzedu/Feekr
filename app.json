@@ -1,15 +1,20 @@
 {
   "pages": [
+    "pages/newsSearch/newsSearch",
+    "pages/guide/guide",
+    "pages/detail-guide/detail-guide",
+    "pages/productSearch/productSearch",
     "pages/detail-suite/detail-suite",
     "pages/navindex/navindex",
-    "pages/productSearch/productSearch",
     "pages/searchRes/searchRes",
     "pages/home/home",
     "pages/detail/detail",
     "pages/index/index",
     "pages/logs/logs",
     "pages/home/morenew/morenew",
-    "pages/home/newdetail/newdetail"
+    "pages/home/newdetail/newdetail",
+    "components/guide/area-item/area-item",
+    "pages/newsSeachRes/newsSearchRes"
   ],
   "window": {
     "backgroundTextStyle": "light",

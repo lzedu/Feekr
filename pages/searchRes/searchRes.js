@@ -57,7 +57,6 @@ Page({
       this.setData({
         keyword:options.keyword
       })
-      console.log(this.data.keyword)
     }
     this.getData()
   },

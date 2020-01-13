@@ -1,12 +1,11 @@
-// pages/productSearch/productSearch.js
+// pages/guide/guide.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    searchHistory:[],
-    hotSearchList:[],
+    cityList: []
   },
 
   /**
@@ -14,15 +13,12 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: 'https://wapi.feekr.com/shop/product/keyword?shopid=FK',
+      url: 'https://wapi.feekr.com/guide/citylist',
       success: result=>{
         this.setData({
-          hotSearchList:result.data.result.list
+          cityList: result.data.result.list
         })
       }
-    })
-    this.setData({
-      searchHistory: wx.getStorageSync('search-history-labels')
     })
   },
 
@@ -37,9 +33,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      searchHistory: wx.getStorageSync('search-history-labels'),
-    })
+
   },
 
   /**
