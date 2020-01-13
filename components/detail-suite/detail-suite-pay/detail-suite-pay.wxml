@@ -17,16 +17,16 @@
       </view>
       <view>
         <view class="common-flex-between order-confirm-suite">
-          周六 希尔顿客房 1晚券&nbsp;X&nbsp;1
+          周六 希尔顿客房 1晚券 X 1
           <view>
-            <view class="text-right">¥&nbsp;899</view>
+            <view class="text-right">¥ 899</view>
           
           </view>
         </view>
         <view class="order-confirm-desc">周六入住希尔顿客房1晚，入住有效期：2020年01月02日至2020年03月31日，不适用日期：春节（1.24-1.30）</view>
       </view>
       <view class="total font-md text-right">合计：
-        <view class="price font-lg base-color">¥&nbsp;1598</view>
+        <view class="price font-lg base-color">¥ 1598</view>
       </view>
     
     </view>

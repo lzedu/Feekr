@@ -36,6 +36,7 @@ App({
   globalData: {
     userInfo: null,
     detailId:'',
-    users:[]
+    users:[],
+    userOrder:[]
   }
 })

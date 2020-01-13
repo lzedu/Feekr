@@ -1,5 +1,6 @@
 // components/detail-suite/detail-suite.js
 import behavior from '../../detail/behaviors/detail-behaviors.js'
+var app = getApp()
 Component({
   /**
    * 组件的属性列表
@@ -15,6 +16,7 @@ Component({
   data: {
     count: 1,
     price: 0,
+    user:wx.getStorageSync("username") || ''
   },
 
 
@@ -45,6 +47,10 @@ Component({
         this.setData({
           sum: this.data.sum + ~~e.detail.value[0]
         })
+        let len = app.globalData.userOrder.len
+        app.globalData.userOrder[len]={
+          
+        }
       } else {
         this.setData({
           sum: this.data.sum - ~~e.currentTarget.dataset.price
@@ -53,6 +59,18 @@ Component({
     },
     goBack() {
       wx.navigateBack()
+    },
+    writeInfo(){
+      if(this.data.user){
+        wx.navigateTo({
+          url: '/components/detail-suite/detail-suite-pay/detail-suite-pay',
+        })
+      }else{
+        app.globalData.userOrder = []
+        wx.navigateTo({
+          url: '/pages/login/login',
+        })
+      }
     }
   },
   observers: {
