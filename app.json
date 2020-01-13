@@ -19,7 +19,6 @@
     "pages/home/newdetail/newdetail",
     "components/guide/area-item/area-item",
     "pages/newsSeachRes/newsSearchRes",
-    "pages/home/morenew/morenew",
     "pages/login/login"
   ],
   "window": {
