@@ -7,11 +7,16 @@
     "pages/navindex/navindex",
     "pages/detail-suite/detail-suite",
     "pages/productSearch/productSearch",
+    "pages/newsSearch/newsSearch",
+    "pages/guide/guide",
+    "pages/detail-guide/detail-guide",
     "pages/searchRes/searchRes",
     "pages/detail/detail",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/home/newdetail/newdetail"
+    "pages/home/newdetail/newdetail",
+    "components/guide/area-item/area-item",
+    "pages/newsSeachRes/newsSearchRes"
   ],
   "window": {
     "backgroundTextStyle": "light",

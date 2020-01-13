@@ -8,7 +8,12 @@ Component({
       type:String
     },
     keyword:{
-      type:String
+      type:String,
+      observer:function(newVal,oldVal){
+        this.setData({
+          inputValue: newVal
+        })
+      }
     }
   },
 
@@ -22,17 +27,6 @@ Component({
   /**
    * 组件的方法列表
    */
-  lifetimes:{
-    attached(){
-      console.log(this.data)
-      if(this.data.keyword){
-        console.log(this.data.keyword)
-        this.setData({
-          inputValue:this.data.keyword
-        })
-      }
-    }
-  },
   methods: {
     bindInput:function(e){
       this.setData({
@@ -40,6 +34,14 @@ Component({
       })
     },
     bindSearch:function(e){
+      var list = wx.getStorageSync('search-history-labels')
+      if(list){
+        if(list.indexOf(e.detail.value) == -1){
+          wx.setStorageSync('search-history-labels', [...list, e.detail.value])
+        }
+      }else{
+        wx.setStorageSync('search-history-labels', [e.detail.value])
+      }
       if (this.data.hasSearched == 'false') {
         wx.navigateTo({
           url: `/pages/searchRes/searchRes?keyword=${e.detail.value}`
@@ -55,10 +57,12 @@ Component({
       this.setData({
         inputValue: ''
       })
-      var myEventDetail = {
-        keyword: ''
+      if (this.data.hasSearched == 'true') {
+        var myEventDetail = {
+          keyword: ''
+        }
+        this.triggerEvent('myevent', myEventDetail)
       }
-      this.triggerEvent('myevent', myEventDetail)
       
     }
   }

@@ -6,7 +6,7 @@
   top:0;
 }
 .search-result-product {
-  padding: 80rpx 2% 0;
+  padding: 210rpx 2% 0;
 }
 .pro-item{
   position: relative;
