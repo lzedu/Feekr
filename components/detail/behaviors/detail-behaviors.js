@@ -11,8 +11,8 @@ let behavior = Behavior({
     group: [],
     userinfo:{},
     prodesc:{},
-    group2:[],
-    sum:0
+    sum: 0,
+    counts: []
   },
   ready: function () {
     let id = wx.getStorageSync("id")
@@ -35,7 +35,6 @@ let behavior = Behavior({
             productUnitCount,
           },
           group,
-          group2:group.slice(1),
           userinfo: {
             head,
             user,
@@ -49,7 +48,30 @@ let behavior = Behavior({
           },
           sum:group[0].groupPrice
         })
-        // console.log(that.data.prodesc.productDetail)
+        console.log(that.data.group)
+        let counts = that.data.group.map((value, index) => {
+          if (index === 0) {
+            return {
+              id: value.groupId,
+              count: 1,
+              price: value.groupPrice,
+              name: value.groupName,
+              desc: value.groupDesc
+            }
+          } else {
+            return {
+              id: value.groupId,
+              count: 0,
+              price: value.groupPrice,
+              name: value.groupName,
+              desc: value.groupDesc
+            }
+          }
+        })
+        that.setData({
+          counts
+        })
+        // console.log(that.data.counts)
       }
     })
   },
