@@ -11,8 +11,8 @@
       <my-icon extClass="iconfont icon-cust" icon="contacts"></my-icon>
       <view class="item-head">客服</view>
     </view>
-    <view class="nav-item">
-    <my-icon extClass="iconfont icon-star01" icon="star"></my-icon>
+    <view class="nav-item" bindtap="pickLike">
+    <my-icon extClass="iconfont icon-star01" icon="star" type="{{status?'field':'outline'}}" color="{{status?'#1abc9c':'black'}}"></my-icon>
       <view class="item-head">收藏</view>
     </view>
     <view class="product-footer-buy product-footer-heavy">立即预订</view>

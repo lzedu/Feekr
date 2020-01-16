@@ -38,6 +38,7 @@ App({
     detailId:'',
     users:[],
     userOrder:[],
-    price:0
+    price:0,
+    userLike:[]
   }
 })

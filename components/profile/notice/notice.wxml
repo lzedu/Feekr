@@ -1,0 +1,28 @@
+<view class="wrap user-wrap notice-wrap">
+  <view class="inner-wrap">
+    <view class="back-title user-header">
+      <text>消息</text>
+      <navigator open-type="navigateBack" class="iconfont icon-fanhui">
+        <mp-icon icon="back2" color="#fff" size="30"/>
+      </navigator>
+    </view>
+    <view class="notice-tab">
+      <navigator redirect="/user/comment" class="tab cur">评论
+
+      </navigator>
+      <text>|</text>
+      <navigator redirect="/user/notice" class="tab">通知
+
+      </navigator>
+      <text>|</text>
+      <navigator redirect="/user/like" class="tab">赞
+
+      </navigator>
+    </view>
+    <view class="msg-wrap">
+      <view class="list-no-result">
+        <mp-icon extClass="iconfont icon-jinggao" icon="error" color="#999999"></mp-icon>暂无评论</view>
+    </view>
+    <view class="loading-notice"></view>
+  </view>
+</view>

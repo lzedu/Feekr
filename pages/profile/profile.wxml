@@ -17,14 +17,14 @@
 
       <view class="menu-group">
 
-        <navigator class="user-menu table-mode" href="/user/comment?id=73022">
+        <navigator class="user-menu table-mode" url="/components/profile/notice/notice">
           <mp-icon icon="email" extClass="table-cell iconfont icon-email txt-right"/>
           <view class="table-cell menu-name txt-left">消息
           </view>
           <mp-icon icon="arrow" type="outline" size="15" extClass="table-cell iconfont icon-right-jiantou"/>
         </navigator>
 
-        <navigator class="user-menu table-mode" href="/user/favourite?id=73022">
+        <navigator class="user-menu table-mode" url="/components/profile/notice/notice">
           <mp-icon icon="star" extClass="table-cell iconfont icon-wujiaoxingkong1 txt-right"/>
           <view class="table-cell menu-name txt-left">收藏
 
@@ -36,7 +36,7 @@
 
       <view class="menu-group">
 
-        <navigator class="user-menu table-mode" href="/user/setting?id=73022">
+        <navigator class="user-menu table-mode" url="/components/profile/notice/notice">
           <mp-icon icon="setting" extClass="table-cell iconfont icon-Set_up txt-right"/>
           <view class="table-cell menu-name txt-left">设置
 
@@ -44,7 +44,7 @@
           <mp-icon icon="arrow" type="outline" size="15" extClass="table-cell iconfont icon-right-jiantou"/>
         </navigator>
 
-        <navigator class="user-menu table-mode" href="/user/feedback?id=73022">
+        <navigator class="user-menu table-mode" url="/components/profile/notice/notice">
           <mp-icon icon="pencil" extClass="table-cell iconfont icon-icon-fankui txt-right"/>
           <view class="table-cell menu-name txt-left">反馈
           </view>

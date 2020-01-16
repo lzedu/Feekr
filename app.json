@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/profile/profile",
     "pages/navindex/navindex",
     "pages/detail-suite/detail-suite",
     "pages/home/home",
@@ -11,7 +12,6 @@
     "pages/guide/guide",
     "pages/detail-guide/detail-guide",
     "pages/searchRes/searchRes",
-    "pages/profile/profile",
     "pages/register/register",
     "pages/detail/detail",
     "pages/index/index",
