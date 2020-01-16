@@ -1,4 +1,5 @@
 <!--pages/home/home.wxml-->
+<loading></loading>
 <view class="home_main">
   <swipers></swipers>
   <view class="search">

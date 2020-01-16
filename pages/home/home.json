@@ -6,6 +6,7 @@
     "product-list": "../../components/homeComponents/productlist/productlist",
     "selected-list": "../../components/homeComponents/selectedlist/selectedlist",
     "new-list": "../../components/homeComponents/newlist/newlist",
-    "city-list": "../../components/homeComponents/citylist/citylist"
+    "city-list": "../../components/homeComponents/citylist/citylist",
+    "loading":"../../components/homeComponents/loading/loading"
   }
 }
