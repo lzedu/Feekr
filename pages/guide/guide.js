@@ -7,7 +7,11 @@ Page({
   data: {
     cityList: []
   },
-
+  gotoSearch:function(){
+    wx.navigateTo({
+      url: '/pages/newsSearch/newsSearch',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

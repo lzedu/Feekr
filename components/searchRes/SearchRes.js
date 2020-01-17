@@ -4,7 +4,22 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    styleId:{
+      type:Number,
+      observer: function(newVal,oldVal){
+        this.setData({
+          styleId: newVal
+        })
+      }
+    }, 
+    styleTxt:{
+      type: String,
+      observer: function(newVal, oldVal){
+        this.setData({
+          styleTxt: newVal
+        })
+      }
+    }
   },
 
   /**
@@ -36,6 +51,7 @@ Component({
   /**
    * 组件的方法列表
    */
+
   methods: {
     _getList(url){
       wx.request({

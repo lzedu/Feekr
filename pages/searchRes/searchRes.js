@@ -11,7 +11,8 @@ Page({
     sortId: 2,
     keyword: '',
     totalCount: 0,
-    page: 1
+    page: 1,
+    styleTxt:''
   },
   getKeyword:function(e){
     this.setData({
@@ -56,6 +57,12 @@ Page({
     if(options.keyword){
       this.setData({
         keyword:options.keyword
+      })
+    }
+    if(options.styleId){
+      this.setData({
+        styleId: options.styleId,
+        styleTxt: options.styleTxt
       })
     }
     this.getData()

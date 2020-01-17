@@ -5,6 +5,11 @@ Page({
     subTitle:'',
     more:''
   },
+  gotoSearch:function(){
+    wx.navigateTo({
+      url: '/pages/productSearch/productSearch',
+    })
+  },
   morenewTap:function(e){
     wx.navigateTo({
       url: './morenew/morenew'

@@ -6,7 +6,11 @@
       keyword="{{keyword}}" 
       bind:myevent="getKeyword"
     ></search-bar>
-    <search-result bind:myevent="getProData"></search-result>
+    <search-result 
+      bind:myevent="getProData"      
+      styleId="{{styleId}}"
+      styleTxt="{{styleTxt}}"
+    ></search-result>
   </view>
   <view wx:if="{{proList[0]}}" class="search-result-product">
     <view wx:for="{{proList}}" wx:key="{{item.productId}}" class="pro-item">
