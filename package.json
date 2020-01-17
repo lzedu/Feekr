@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@vant/weapp": "^1.0.3",
     "@miniprogram-component-plus/tabs": "^1.0.0",
     "weui-miniprogram": "^0.2.1"
   }

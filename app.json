@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/guide/guide",
     "pages/profile/profile",
     "pages/navindex/navindex",
     "pages/detail-suite/detail-suite",
@@ -10,7 +11,6 @@
     "pages/home/columnnew/columnnew",
     "pages/home/morenew/morenew",
     "pages/productSearch/productSearch",
-    "pages/guide/guide",
     "pages/detail-guide/detail-guide",
     "pages/searchRes/searchRes",
     "pages/register/register",
@@ -38,7 +38,7 @@
         "text": "度假"
       },
       {
-        "pagePath": "pages/profile/profile",
+        "pagePath": "pages/guide/guide",
         "text": "攻略"
       },
       {
