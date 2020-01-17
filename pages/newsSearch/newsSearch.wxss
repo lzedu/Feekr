@@ -41,6 +41,7 @@
   top: 0;
   padding-right: 16rpx;
   padding-top: 10rpx;
+  z-index: 1000;
 }
 .btn-box{
   vertical-align: middle;

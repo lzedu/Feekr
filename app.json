@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/newsSearch/newsSearch",
+    "pages/newsSeachRes/newsSearchRes",
     "pages/home/home",
     "pages/home/morecolumn/morecolumn",
     "pages/home/columnnew/columnnew",
@@ -7,7 +9,6 @@
     "pages/navindex/navindex",
     "pages/detail-suite/detail-suite",
     "pages/productSearch/productSearch",
-    "pages/newsSearch/newsSearch",
     "pages/guide/guide",
     "pages/detail-guide/detail-guide",
     "pages/searchRes/searchRes",
@@ -18,7 +19,6 @@
     "pages/logs/logs",
     "pages/home/newdetail/newdetail",
     "components/guide/area-item/area-item",
-    "pages/newsSeachRes/newsSearchRes",
     "pages/login/login"
   ],
   "window": {

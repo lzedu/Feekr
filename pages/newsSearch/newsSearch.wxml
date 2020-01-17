@@ -2,26 +2,40 @@
 <view class="search-wrap">
   <view class="search-container">
     <view class="search-box">
-      <view class="back">
+      <view class="back" bindtap="gotoBack">
         <mp-icon icon="back2" color="#ccc" size="{{30}}"></mp-icon>
       </view>
       <view class="search-bar">
         <view class="search-input guide-search-form">
-          <input type="search" class="search-position" placeholder="搜索目的地" id="search-site" bindconfirm="submitSearch"/>
-          <view class="close">
+          <input 
+            type="search" 
+            value="{{inputValue}}"
+            class="search-position" 
+            placeholder="搜索目的地" 
+            id="search-site" 
+            bindconfirm="submitSearch" 
+            bindinput="bindKeyInput" 
+            data-title="{{inputValue}}"
+          />
+          <view wx:if="{{inputValue}}" class="close" bindtap="clearInput">
             <mp-icon icon="close2" color="#cdcdcd" type="field"></mp-icon>
           </view>
         </view>
       </view>
       <view class="btn-box">
-        <view class="search-btn">搜索</view>
+        <view class="search-btn" data-title="{{inputValue}}" bindtap="submitSearch">搜索</view>
       </view>
     </view>
   </view>
   <view class="search-result">
     <view class="drop-list">
       <view class="li" wx:for="{{searchList}}" wx:key="index">
-        <view class="scenic-item search-keyword">{{item.site}}
+        <view 
+          class="scenic-item search-keyword"
+          bindtap="goToRes" 
+          data-id="{{item.id}}"
+          data-title="{{item.site}}"
+        >{{item.site}}
           <text class="area">{{item.area}}</text>
           <view class="arrow">
             <mp-icon icon="arrow" color="#999" size="{{10}}"></mp-icon>
@@ -41,9 +55,14 @@
         <mp-icon icon="delete" color="#999" size="{{25}}"></mp-icon>
       </view>
       <view class="tag-container">
-        <view class="tag-item search-keyword" data-id="" data-keyword="我们">我们</view>
-        <view class="tag-item search-keyword" data-id="6170" data-keyword="上海">上海</view>
-        <view class="tag-item search-keyword" data-id="" data-keyword="深">深</view>
+        <view 
+          class="tag-item search-keyword" 
+          wx:for="{{searchHistory}}" 
+          wx:key="id"
+          data-id="{{item.id}}"
+          data-title="{{item.title}}"
+          bindtap="goToRes"
+        >{{item.title}}</view>
       </view>
     </view>
   </view>
@@ -55,7 +74,17 @@
         <text>-</text>
       </view>
       <view class="tag-container">
-        <view wx:for="{{keywordList}}" wx:key="id" class="tag-item search-keyword" id="{{item.id}}">{{item.title}}</view>
+        <view 
+          wx:for="{{keywordList}}" 
+          wx:key="id" 
+          class="tag-item search-keyword" 
+          id="{{item.id}}"
+          data-id="{{item.id}}"
+          data-title="{{item.title}}"
+          bindtap="goToRes"
+        >
+          {{item.title}}
+        </view>
       </view>
     </view>
   </view>
