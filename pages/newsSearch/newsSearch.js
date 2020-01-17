@@ -5,51 +5,79 @@ Page({
    * 页面的初始数据
    */
   data: {
-    keywordList:[],
-    searchList:[],
-    recentSearchList:[]
+    keywordList: [],
+    searchList: [],
+    recentSearchList: [],
+    inputValue:''
   },
-
-  submitSearch:function(e){
-    var list = wx.getStorageSync('guideRecentSearch')
-    if (list) {
-      if (list.indexOf(e.detail.value) == -1) {
-        wx.setStorageSync('guideRecentSearch', [...list, e.detail.value])
-      }
-    } else {
-      wx.setStorageSync('guideRecentSearch', [e.detail.value])
-    }
-    console.log(wx.getStorageSync('guideRecentSearch'))
+  bindKeyInput: function (e) {
+    this.setData({
+      inputValue: e.detail.value
+    })
+  }, 
+  submitSearch: function (e) {
+    var keyWord = e.currentTarget.dataset.title
     wx.request({
-      url: 'https://wapi.feekr.com/guide/searchlist?keyword='+e.detail.value+'&count=8',
-      success: result =>{
+      url: 'https://wapi.feekr.com/guide/searchlist?keyword=' + keyWord + '&count=8',
+      success: result => {
         this.setData({
           searchList: result.data.result.list
         })
+        var slist = this.data.searchList
+        var arr=[]
+        if(slist.length){
+          slist.forEach( val => {
+            arr.push({id:val.id,title:val.site})
+            return arr
+          })
+        }else{
+          arr.push({id:'',title:keyWord})
+        }
+        var list = wx.getStorageSync('guideRecentSearch')
+        if (list) {
+          var flag = 0
+          for(var item in list){
+            for(var value in arr){
+              if(list[item].id == arr[value].id&&list[item].title == arr[value].title){
+                flag = 1
+              }
+            }
+          }
+          if(!flag){
+            wx.setStorageSync('guideRecentSearch', [...list, ...arr])
+          }
+          
+        } else {
+          wx.setStorageSync('guideRecentSearch', [...arr])
+        }
+        if (slist.length == 0) {
+          wx.navigateTo({
+            url: `/pages/newsSeachRes/newsSearchRes?id=&keyword=${keyWord}`,
+          })
+        }
       }
     })
-    console.log(this.data.searchList)
-    if(this.data.searchList.length == 0){
-      wx.navigateTo({
-        url: '/pages/newsSearchRes/newsSearchRes',
-      })
-    }
+    
+  },
+  goToRes:function(e){
+    wx.navigateTo({
+      url: `/pages/newsSeachRes/newsSearchRes?id=${e.currentTarget.dataset.id}&keyword=${e.currentTarget.dataset.title}`
+    })
+  },
+  gotoBack:function(){
+    wx.navigateBack({})
+  },
+  clearInput: function () {
+    this.setData({
+      inputValue: '',
+      searchList: []
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.request({
-      method: 'POST',
-      data: {id: 6170, keyword:'上海',disableLazyInit: 1},
-      url: 'https://wapi.feekr.com/guide/search',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded' 
-      },
-      success: result=>{
-        console.log(result.data)
-      }
-    })
+    
     wx.request({
       url: 'https://wapi.feekr.com/guide/keywordlist',
       success: result => {
@@ -59,7 +87,7 @@ Page({
       }
     })
     this.setData({
-      searchHistory: wx.getStorageSync('search-history-labels')
+      searchHistory: wx.getStorageSync('guideRecentSearch')
     })
   },
 
@@ -69,6 +97,7 @@ Page({
   onReady: function () {
 
   },
+
 
   /**
    * 生命周期函数--监听页面显示
@@ -112,3 +141,5 @@ Page({
 
   }
 })
+
+

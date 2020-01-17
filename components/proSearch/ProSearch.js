@@ -63,7 +63,6 @@ Component({
         }
         this.triggerEvent('myevent', myEventDetail)
       }
-      
     }
   }
 })

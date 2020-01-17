@@ -18,6 +18,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    gotoSearch(){
+      wx.navigateTo({
+        url: '/pages/newSearch/newsSearch',
+      })
+    }
   }
 })

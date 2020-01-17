@@ -1,2 +1,111 @@
 <!--pages/newsSeachRes/newsSearchRes.wxml-->
-<text>pages/newsSeachRes/newsSearchRes.wxml</text>
+<guide-search></guide-search>
+<view class="search-result-main article">
+  <my-tabs 
+    tabs="{{tabs}}" 
+    activeTab="{{activeTab}}" 
+    tabClass="tab" 
+    tabActiveTextColor="#1abc9c" 
+    tabInactiveTextColor="#707070" 
+    tabUnderlineColor="#1abc9c" 
+    swiperClass="weui-tabs-swiper"
+  >
+    <block>
+      <view class="tab-content" slot="tab-content-0">
+        <view wx:if="{{tabs[0].data.recommend.cover}}" class="result-guide-item result-section">
+          <view class="table-mode">
+            <view class="table-cell">
+              <view class="thumb-wrap">
+                <image mode="widthFix" wx:if="{{tabs[0].data.recommend.cover}}" src="{{tabs[0].data.recommend.cover}}!300X225" style="display: block;" />
+              </view>
+            </view>
+            <view class="table-cell txt-left describe-wrap">
+              <view class="main-title font-lg">{{tabs[0].data.recommend.cityName}}小众攻略</view>
+              <view class="sub-title font-sm">
+                <text>{{tabs[0].data.recommend.theme}}个主题推荐</text> |
+                <text>{{tabs[0].data.recommend.path}}个路线推荐</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{tabs[0].data.articleList.length}}" class="result-article-container result-section">
+          <view class="header-title-wrap">
+            <text>-</text>
+            <text class="section-title">主编精选</text>
+            <text>-</text>
+          </view>
+          <view class="result-item" wx:for="{{tabs[0].data.articleList}}" wx:key="id">
+            <view class="flex-box">
+              <view class="img-box">
+                <image mode="widthFix" src="{{item.cover}}!300X300" style="display: block;"/> 
+              </view>
+              <view class="describe-wrap title-box">
+                <text class="title-txt">{{item.title}}</text>
+              </view>
+            </view>
+          </view>
+          <view wx:if="{{tabs[0].data.articleMore}}" class="get-more-list">更多主编精选</view>
+        </view>
+        <view wx:if="{{tabs[0].data.themeList.length}}" class="result-theme-container result-section">
+          <view class="header-title-wrap">
+            <text>-</text>
+            <text class="section-title">主题推荐</text>
+            <text>-</text>
+          </view>
+          <view class="result-item" wx:for="{{tabs[0].data.themeList}}" wx:key="id">
+            <view class="flex-box">
+              <view class="img-box">
+                <image mode="widthFix" src="{{item.cover}}!200X200" style="display: block;"/> 
+              </view>
+              <view class="describe-wrap title-box">
+                <view class="main-title">{{item.title}}</view>
+                <view class="sub-title">{{item.recommendCount}}个推荐</view>
+              </view>
+            </view>
+          </view>
+          <view wx:if="{{tabs[0].data.themeMore}}" class="get-more-list">更多主题推荐</view>
+        </view>
+        <view wx:if="{{tabs[0].data.playList.length}}" class="result-play-container result-section">
+          <view class="header-title-wrap">
+            <text>-</text>
+            <text class="section-title">飞小编推荐</text>
+            <text>-</text>
+          </view>
+          <view class="result-item" wx:for="{{tabs[0].data.playList}}" wx:key="id">
+            <view class="flex-box">
+              <view class="img-box">
+                <view>
+                  <image mode="widthFix" src="{{item.avatar}}!180X180" style="display: block;"/>
+                </view>
+              </view>
+              <view class="title-box describe-wrap">
+                <view class="info">
+                  <view>{{item.nickname}}</view> |
+                  <text>{{item.scenicName}}</text>
+                </view>
+                <view>
+                  <view class="main-title">{{item.title}}</view>
+                  <view class="desc">{{item.desc}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view wx:if="{{tabs[0].data.playMore}}" class="get-more-list">更多飞小编推荐</view>
+        </view>
+      </view>
+    </block>
+    <block>
+      <view class="tab-content" slot="tab-content-1">
+        <view class="market-wrap">
+          <view class="market-item" wx:for="{{tabs[1].data.list}}" wx:key="productId">
+            <image mode="widthFix" class="market-cover" style="height: 199.688px; display: block;" src="{{item.productCover}}!640X360"/>
+            <view class="market-desc">{{item.productDesc}}</view>
+            <view class="market-name">{{item.productName}}</view>
+            <text class="font-md market-label">¥{{item.productPrice}}</text>
+          </view>
+          <view wx:if="({{tabs[1].data.totalCount}} > 4) == true " class="get-more-list market-more">更多商品推荐</view>
+        </view>
+      </view>
+    </block>
+  </my-tabs>
+</view>

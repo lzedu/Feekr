@@ -4,12 +4,12 @@
     <mp-icon icon="search" class="search-gate-icon"></mp-icon>
     <input 
       type="search" 
+      value="{{inputValue}}"
       placeholder="搜索目的地/关键词" 
       placeholder-class="search-placeholder"
       class="search-gate-input"
       bindinput="bindInput"
       bindconfirm="bindSearch" 
-      value="{{inputValue}}"
     />
     <mp-icon 
       icon="close2" 

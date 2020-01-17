@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "guide-search": "../../components/guide/guide-search/guide-search",
+    "my-tabs": "../../@miniprogram-component-plus/tabs"
+  }
 }
